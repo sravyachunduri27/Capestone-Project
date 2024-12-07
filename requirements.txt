@@ -1,0 +1,13 @@
+flask
+gunicorn
+spacy
+pandas
+pyspellchecker
+PyPDF2
+nltk
+sentence-transformers
+selenium
+webdriver-manager
+beautifulsoup4
+requests
+
