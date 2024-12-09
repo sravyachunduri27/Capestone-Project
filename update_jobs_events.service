@@ -1,0 +1,17 @@
+[Unit]
+Description=Web Scraping Service for Jobs and Events
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/finalproject
+ExecStart=/home/ubuntu/finalproject/venv/bin/python /home/ubuntu/finalproject/webscraping/eventScraper.py
+ExecStartPost=/home/ubuntu/finalproject/venv/bin/python /home/ubuntu/finalproject/webscraping/HandshakeJobScraper.py
+Restart=on-failure
+User=ubuntu
+Group=ubunt
+Environment="PATH=/home/ubuntu/finalproject/venv/bin"
+Environment="VIRTUAL_ENV=/home/ubuntu/finalproject/venv"
+
+[Install]
+WantedBy=multi-user.target

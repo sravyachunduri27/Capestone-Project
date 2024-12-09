@@ -1,0 +1,12 @@
+[Unit]
+Description=Job Helper
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/finalproject
+ExecStart=/home/ubuntu/finalproject/venv/bin/gunicorn -w 1 -b 0.0.0.0:5001 app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
